@@ -1,12 +1,17 @@
 package com.projeto.bus_location.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.Entity;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 
+@Setter
+@Getter
 @Entity
-public class posicaoVeiculo {
+public class PosicaoVeiculo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,8 +21,9 @@ public class posicaoVeiculo {
     private String line;
     private double latitude;
     private double longitude;
-
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
     private LocalDateTime timestamp;
 
-    // Getters e Setters
+
+
 }
